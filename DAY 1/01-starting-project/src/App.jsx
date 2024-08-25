@@ -1,10 +1,5 @@
-// import React, {Component} from "react";
-// import { Header } from "./Components/Header";
+import { CORE_CONCEPTS } from "./Componentsdata";
 import reactimg from "./assets/react-core-concepts.png";
-import componentsImg from "./assets/components.png";
-import configImg from "./assets/config.png";
-import js_ui from "./assets/jsx-ui.png";
-import statemanagement from "./assets/state-mgmt.png";
 const reactdetail = ['Fundamental', 'Crucial', 'Core'];
 function genrandomint(high){
   return Math.floor(Math.random() * (high + 1));
@@ -29,8 +24,8 @@ const CoreConcept = (props) => {
   return (
     <li>
       <img src = {props.image}  alt= {props.title} />
-      <h3>{props.Title}</h3>
-      <p>{props.Description}</p>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
     </li>
   );
 }
@@ -42,18 +37,26 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept Title="Fundamental"
-              Description = "The core concepts of React"
-              image = {componentsImg} />
-              <CoreConcept Title="Configurable"
-              Description = " React concepts you will need for almost any app you are going to build!"
-              image = {configImg}/>
-              <CoreConcept Title="JSX/UI"
-              Description = "React provides you with the JSX UI"
-              image = {js_ui}/>
-              <CoreConcept Title="State Management"
-              Description = "React concepts will amerge you about state management"
-              image = {statemanagement}/>
+          <CoreConcept 
+          title={CORE_CONCEPTS[0].title}
+          description = {CORE_CONCEPTS[0].description}
+          image = {CORE_CONCEPTS[0].image}
+          />
+          <CoreConcept 
+          title = {CORE_CONCEPTS[1].title}
+          description = {CORE_CONCEPTS[1].description}
+          image = {CORE_CONCEPTS[1].image}
+          />
+          <CoreConcept 
+          title = {CORE_CONCEPTS[2].title}
+          description = {CORE_CONCEPTS[2].description}
+          image = {CORE_CONCEPTS[2].image}
+          />
+          <CoreConcept 
+          title = {CORE_CONCEPTS[3].title}
+          description = {CORE_CONCEPTS[3].description}
+          image = {CORE_CONCEPTS[3].image}
+          />
           </ul>
         </section>
        
