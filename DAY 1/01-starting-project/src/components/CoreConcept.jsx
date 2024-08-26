@@ -1,4 +1,3 @@
-import { CORE_CONCEPTS } from "./Componentsdata";
 const CoreConcept = ({image, title, description}) => {
 
     return (
@@ -9,3 +8,4 @@ const CoreConcept = ({image, title, description}) => {
       </li>
     );
   }
+  export default CoreConcept;
