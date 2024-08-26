@@ -31,7 +31,7 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
               <menu>
-                  <ClickButton>Components</ClickButton>
+                  <ClickButton label = "component"></ClickButton>            
               </menu>
         </section >
       </main>
