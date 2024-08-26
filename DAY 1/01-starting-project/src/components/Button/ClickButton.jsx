@@ -1,2 +1,2 @@
-const ClickButton = ({label}) => { return <li><button>{label}</button></li>}
+const ClickButton = (props) => { return <li><button>{props.children}</button></li>}
     export default ClickButton;
