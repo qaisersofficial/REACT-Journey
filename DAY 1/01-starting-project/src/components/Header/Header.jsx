@@ -1,5 +1,5 @@
 import reactimg from "../../assets/react-core-concepts.png";
-
+import "./Header.css"
 const reactdetail = ['Fundamental', 'Crucial', 'Core'];
 function genrandomint(high){
   return Math.floor(Math.random() * (high + 1));
