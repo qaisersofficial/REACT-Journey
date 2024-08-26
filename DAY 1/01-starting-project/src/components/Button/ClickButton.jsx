@@ -1,2 +1,2 @@
-const ClickButton = (props) => { return <li><button>{props.children}</button></li>}
+const ClickButton = ({children}) => { return <li><button>{children}</button></li>}
     export default ClickButton;
