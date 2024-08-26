@@ -1,6 +1,7 @@
 import Header from './components/Header/Header.jsx';
 import { CORE_CONCEPTS } from "./Componentsdata";
 import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
+import ClickButton from './components/Button/ClickButton.jsx'
 function App() {
   return (
     <div>
@@ -26,7 +27,13 @@ function App() {
 
           </ul>
         </section>
-       
+
+        <section id="examples">
+          <h2>Examples</h2>
+              <menu>
+                  <ClickButton>Components</ClickButton>
+              </menu>
+        </section >
       </main>
     </div>
   );
