@@ -31,7 +31,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
               <menu>
-                  <ClickButton >Components</ClickButton>            
+                  <ClickButton >Components</ClickButton>
+                  <ClickButton >Props</ClickButton>
+                  <ClickButton >States</ClickButton>   {/* will learn it later*/}
+                  <ClickButton >JSX</ClickButton>            
               </menu>
         </section >
       </main>
