@@ -1,3 +1,8 @@
 import './ClickButton.css'
-const ClickButton = (props) => { return <li><button>{props.children}</button></li>}
+const ClickButton = (props) => { 
+    function clickhandler(){
+        alert("You Click a button");
+    }
+     return <li><button onClick={clickhandler}>{props.children}</button></li>;
+}
     export default ClickButton;
