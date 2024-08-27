@@ -3,8 +3,9 @@ import { CORE_CONCEPTS } from "./Componentsdata";
 import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
 import ClickButton from './components/Button/ClickButton.jsx'
 function App() {
-  function clickhandler(){
-    alert("You Click a button");
+  function clickhandler(selectedbutton){
+    // selectedbutton =>  Components Props States JSX
+  alert(selectedbutton);
 }
   return (
     <div>
@@ -34,10 +35,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
               <menu>
-                  <ClickButton onTapped={clickhandler} >Components</ClickButton>
-                  <ClickButton >Props</ClickButton>
-                  <ClickButton >States</ClickButton>   {/* will learn it later*/}
-                  <ClickButton >JSX</ClickButton>            
+                  <ClickButton  onTapped={() => clickhandler("Components")}>Components</ClickButton>
+                  <ClickButton onTapped={() => clickhandler("props")}>Props</ClickButton>
+                  <ClickButton onTapped={() => clickhandler("States")}>States</ClickButton>   {/* will learn it later*/}
+                  <ClickButton onTapped={() => clickhandler("JSX")}>JSX</ClickButton>            
               </menu>
         </section >
       </main>
