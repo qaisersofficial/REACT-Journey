@@ -6,10 +6,20 @@ import ClickButton from './components/Button/ClickButton.jsx';
 import { EXAMPLES } from './Componentsdata'; 
 function App() {
   // Hook and useState
-  const [selectedTopic, setSelectedtopic] =  useState('Components')
+  const [selectedTopic, setSelectedtopic] =  useState()
   function clickhandler(selectedbutton){
     // selectedbutton =>  Components Props States JSX
 setSelectedtopic(selectedbutton);
+}
+var content = <p>Please Click any button to show topic</p>;
+if(selectedTopic) {
+  content = <div id="tab-content">
+  <h3>{EXAMPLES[selectedTopic].title}</h3>
+  <p>{EXAMPLES[selectedTopic].description}</p>
+  <pre>
+    <code>{EXAMPLES[selectedTopic].code}</code>
+  </pre>
+ </div>;
 }
   return (
     <div>
@@ -46,13 +56,7 @@ setSelectedtopic(selectedbutton);
                          
               </menu>
             
-             <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-                <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-             </div>
+             {content}
         </section >
       </main>
     </div>
