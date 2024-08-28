@@ -35,13 +35,11 @@ if(selectedTopic) {
           image = {CORE_CONCEPTS[0].image}
           /> */}
 
-          <CoreConcept {...CORE_CONCEPTS[0]}/>
-         
-          <CoreConcept {...CORE_CONCEPTS[1]}/>
-
-          <CoreConcept {...CORE_CONCEPTS[2]}/>
-          
-          <CoreConcept {...CORE_CONCEPTS[3]}/>
+          {/* <CoreConcept {...CORE_CONCEPTS[0]}/> */}
+         {/* we can access the array element by this unique methode   */}
+          {CORE_CONCEPTS.map((conceptItem) => (
+            <CoreConcept {...conceptItem} />
+          ))}
 
           </ul>
         </section>
