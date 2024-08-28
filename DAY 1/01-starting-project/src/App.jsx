@@ -49,10 +49,10 @@ if(selectedTopic) {
         <section id="examples">
           <h2>Examples</h2>
               <menu>
-                  <ClickButton  onTapped={() => clickhandler("Components")}>Components</ClickButton>
-                  <ClickButton onTapped={() => clickhandler("Props")}>Props</ClickButton>
-                  <ClickButton onTapped={() => clickhandler("State")}>States</ClickButton>   {/* will learn it later*/}
-                  <ClickButton onTapped={() => clickhandler("JSX")}>JSX</ClickButton>  
+                  <ClickButton isClicked={selectedTopic=== 'Components'} onTapped={() => clickhandler("Components")}>Components</ClickButton>
+                  <ClickButton isClicked={selectedTopic=== 'Props'} onTapped={() => clickhandler("Props")}>Props</ClickButton>
+                  <ClickButton isClicked={selectedTopic=== 'State'}onTapped={() => clickhandler("State")}>States</ClickButton>   
+                  <ClickButton isClicked={selectedTopic=== 'JSX'} onTapped={() => clickhandler("JSX")}>JSX</ClickButton>  
                          
               </menu>
             
