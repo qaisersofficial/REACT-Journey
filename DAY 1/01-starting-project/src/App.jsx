@@ -38,7 +38,7 @@ if(selectedTopic) {
           {/* <CoreConcept {...CORE_CONCEPTS[0]}/> */}
          {/* we can access the array element by this unique methode   */}
           {CORE_CONCEPTS.map((conceptItem) => (
-            <CoreConcept {...conceptItem} />
+            <CoreConcept key={conceptItem.title} {...conceptItem} />
           ))}
 
           </ul>
