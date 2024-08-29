@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ClickButton from '../Button/ClickButton.jsx';
 import { EXAMPLES } from '../../Componentsdata'; 
+import Section from './Section.jsx';
 export default function Examples() {
       // Hook and useState
   const [selectedTopic, setSelectedtopic] =  useState()
@@ -19,17 +20,16 @@ if(selectedTopic) {
  </div>;
 }
     return(
-        <section id="examples">
-        <h2>Examples</h2>
+        <Section title = "Examples" id = "examples">
             <menu>
-                <ClickButton isClicked={selectedTopic=== 'Components'} onTapped={() => clickhandler("Components")}>Components</ClickButton>
-                <ClickButton isClicked={selectedTopic=== 'Props'} onTapped={() => clickhandler("Props")}>Props</ClickButton>
-                <ClickButton isClicked={selectedTopic=== 'State'}onTapped={() => clickhandler("State")}>States</ClickButton>   
-                <ClickButton isClicked={selectedTopic=== 'JSX'} onTapped={() => clickhandler("JSX")}>JSX</ClickButton>  
+                <ClickButton isClicked={selectedTopic=== 'Components'} onClick={() => clickhandler("Components")}>Components</ClickButton>
+                <ClickButton isClicked={selectedTopic=== 'Props'} onClick={() => clickhandler("Props")}>Props</ClickButton>
+                <ClickButton isClicked={selectedTopic=== 'State'} onClick={() => clickhandler("State")}>States</ClickButton>   
+                <ClickButton isClicked={selectedTopic=== 'JSX'} onClick={() => clickhandler("JSX")}>JSX</ClickButton>  
                        
             </menu>
           
            {content}
-      </section >
+      </Section >
     );
 }
