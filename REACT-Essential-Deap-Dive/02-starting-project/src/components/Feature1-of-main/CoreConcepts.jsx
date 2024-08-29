@@ -1,10 +1,9 @@
 import { CORE_CONCEPTS } from "../../Componentsdata.js";
 import CoreConcept from '../CoreConcept/CoreConcept.jsx';
-
+import Section from '../Feature2-of-main/Section.jsx';
 export default function CoreConcepts (){
     return (
-                <section id="core-concepts">
-        <h2>Core Concepts</h2>
+                <Section title="CoreConcepts" id="core-concepts">
         <ul>
 
         {/* <CoreConcept 
@@ -20,6 +19,6 @@ export default function CoreConcepts (){
         ))}
 
         </ul>
-        </section>
+        </Section>
     );
 }
