@@ -1,6 +1,6 @@
 import './ClickButton.css'
-const ClickButton = ({children, onTapped, isClicked}) => { 
+const ClickButton = ({children, isClicked, ...props}) => { 
  
-     return <li><button className={isClicked ? 'active' : undefined} onClick={onTapped}>{children}</button></li>;
+     return <li><button className={isClicked ? 'active' : undefined} {...props}>{children}</button></li>;
 }
     export default ClickButton;
