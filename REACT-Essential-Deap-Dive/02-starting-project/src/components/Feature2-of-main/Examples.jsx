@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ClickButton from '../Button/ClickButton.jsx';
 import { EXAMPLES } from '../../Componentsdata'; 
 import Section from './Section.jsx';
+import Tab from './Tab.jsx';
 export default function Examples() {
       // Hook and useState
   const [selectedTopic, setSelectedtopic] =  useState()
@@ -21,15 +22,16 @@ if(selectedTopic) {
 }
     return(
         <Section title = "Examples" id = "examples">
-            <menu>
-                <ClickButton isClicked={selectedTopic=== 'Components'} onClick={() => clickhandler("Components")}>Components</ClickButton>
+          <Tab buttons = {
+            <>
+             <ClickButton isClicked={selectedTopic=== 'Components'} onClick={() => clickhandler("Components")}>Components</ClickButton>
                 <ClickButton isClicked={selectedTopic=== 'Props'} onClick={() => clickhandler("Props")}>Props</ClickButton>
                 <ClickButton isClicked={selectedTopic=== 'State'} onClick={() => clickhandler("State")}>States</ClickButton>   
                 <ClickButton isClicked={selectedTopic=== 'JSX'} onClick={() => clickhandler("JSX")}>JSX</ClickButton>  
-                       
-            </menu>
-          
-           {content}
+            </>
+          }>
+          {content}
+          </Tab>
       </Section >
     );
 }
