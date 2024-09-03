@@ -1,6 +1,5 @@
 export default function Tab ({children, buttons}) {
-    return  
-    <>
+    return <>
         <menu>{buttons}</menu>
         {children}
     </>
