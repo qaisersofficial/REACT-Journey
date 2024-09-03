@@ -22,7 +22,7 @@ if(selectedTopic) {
 }
     return(
         <Section title = "Examples" id = "examples">
-          <Tab buttons = {
+          <Tab buttonsContainer = "menu" buttons = {
             <>
              <ClickButton isClicked={selectedTopic=== 'Components'} onClick={() => clickhandler("Components")}>Components</ClickButton>
                 <ClickButton isClicked={selectedTopic=== 'Props'} onClick={() => clickhandler("Props")}>Props</ClickButton>
