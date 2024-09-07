@@ -1,5 +1,6 @@
 import { useState } from "react";
-function PlayerInfo ({name, symbol}) {
+function PlayerInfo ({initialName, symbol}) {
+   const [ playerName, setPlayerName] = useState(initialName);
    const [ isModification, setIsEditing ] = useState(false);
     //   const  handleModificationClick = () =>{
     //     // setIsEditing(isModification ? false : true);
@@ -9,14 +10,17 @@ function PlayerInfo ({name, symbol}) {
     const handleModificationClick = () => {
          setIsEditing((wasModification) => !wasModification);
       };
-      let playerName = <span className="player-name">{name}</span>;
+      function handleChangeName(event){
+        setPlayerName(event.target.value);
+      }
+      let editablePlayerName = <span className="player-name">{playerName}</span>;
       if (isModification){
-        playerName = <input type="text" required value = {name} />;
+        editablePlayerName = <input type="text" required value = {playerName} onChange={handleChangeName} />;
       }
     return (
     <li>
           <span className="player">
-            {playerName}
+            {editablePlayerName}
             <span className="player-symbol">{symbol}</span>
           </span>
           <button onClick={handleModificationClick}>{isModification ? "Save" : "Edit"} </button>
