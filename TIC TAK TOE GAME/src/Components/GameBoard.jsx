@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 const intialGameBoard = [
     [null, null, null],
@@ -5,15 +6,16 @@ const intialGameBoard = [
     [null, null, null],
 ];
 
-export default function GameBoard() {
+export default function GameBoard({onClickSquare, activePlayerSymbol}) {
     const [gameBoard, setGameBoard] = useState(intialGameBoard);
     
     function handleClickedSquare (rowIndex,columnIndex)  {
         setGameBoard((prevGameBoard) => {
             const newGameBoard = [...prevGameBoard.map((innerArray) => [...innerArray])];
-            newGameBoard[rowIndex][columnIndex] = 'X';
+            newGameBoard[rowIndex][columnIndex] = activePlayerSymbol;
             return newGameBoard;
         } );
+        onClickSquare();
     }
     return (
         <ol id="game-board">
