@@ -1,5 +1,5 @@
-export default  Log = ({log}) => {
-
+export default  Log = () => {
+ 
 
 
     return (
