@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import PlayerInfo from './Components/Playerinfo';
+import PlayerInfo from './Components/PlayerInfo';
 import GameBoard from './Components/GameBoard';
+import Log from './Components/Log';
 function App() {
   const [activePlayer, setActivePlayer] = useState( "X" );
+  const [log, setLog] = useState([]);
   function switchPlayer() {
     setActivePlayer((prevActivePlayer) => prevActivePlayer === "X" ? "O" : "X");
+    setLog();
   }
   
   return (<main>
@@ -15,6 +18,7 @@ function App() {
        </ol>
        <GameBoard onClickSquare={ switchPlayer } activePlayerSymbol={activePlayer}/>
       </div>
+      <Log />
     </main>
   );
 }
