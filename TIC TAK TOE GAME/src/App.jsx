@@ -5,10 +5,21 @@ import Log from './Components/Log';
 function App() {
   const [activePlayer, setActivePlayer] = useState( "X" );
   const [log, setLog] = useState([]);
-  function switchPlayer() {
+  function switchPlayer(rowIndex, columnIndex){ 
     setActivePlayer((prevActivePlayer) => prevActivePlayer === "X" ? "O" : "X");
-    setLog();
+    
+    setLog(prevTurns =>{
+        let currentPlayer = 'X';
+        if (prevTurns.length > 0 && prevTurns[0].player === 'X'){
+          currentPlayer = 'O';
+        }
+
+      const updatedTurns =  [ { square: {row: rowIndex, col: columnIndex} , player: currentPlayer, ...prevTurns }];
+      return updatedTurns;
+      });
+    
   }
+
   
   return (<main>
       <div id="game-container"> 

@@ -1,12 +1,10 @@
-
-import { useState } from 'react';
 const intialGameBoard = [
     [null, null, null],
     [null, null, null],
     [null, null, null],
 ];
 
-export default function GameBoard({onClickSquare, activePlayerSymbol}) {
+export default function GameBoard({onClickSquare}) {
     // const [gameBoard, setGameBoard] = useState(intialGameBoard);
     
     // function handleClickedSquare (rowIndex,columnIndex)  {
@@ -16,13 +14,13 @@ export default function GameBoard({onClickSquare, activePlayerSymbol}) {
     //         return newGameBoard;
     //     } );
     //     onClickSquare();
-    // }
+    // } 
     return (
         <ol id="game-board">
         {gameBoard.map((row, rowIndex) => (<li key={rowIndex} >
             <ol>
                 {row.map((playerSymbol, columnIndex) => (<li key={columnIndex}>
-                    <button onClick={() => handleClickedSquare(rowIndex, columnIndex)}>{playerSymbol}</button>
+                    <button onClick={onClickSquare}>{playerSymbol}</button>
                 </li>))}
             </ol>
         </li>))}
