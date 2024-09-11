@@ -3,9 +3,12 @@ import PlayerInfo from './Components/Playerinfo';
 import GameBoard from './Components/GameBoard';
 function App() {
   const [activePlayer, setActivePlayer] = useState( "X" );
+  const [log, setLog] = useState([]);
   function switchPlayer() {
     setActivePlayer((prevActivePlayer) => prevActivePlayer === "X" ? "O" : "X");
+    setLog();
   }
+
   
   return (<main>
       <div id="game-container"> 
