@@ -7,16 +7,16 @@ const intialGameBoard = [
 ];
 
 export default function GameBoard({onClickSquare, activePlayerSymbol}) {
-    // const [gameBoard, setGameBoard] = useState(intialGameBoard);
+    const [gameBoard, setGameBoard] = useState(intialGameBoard);
     
-    // function handleClickedSquare (rowIndex,columnIndex)  {
-    //     setGameBoard((prevGameBoard) => {
-    //         const newGameBoard = [...prevGameBoard.map((innerArray) => [...innerArray])];
-    //         newGameBoard[rowIndex][columnIndex] = activePlayerSymbol;
-    //         return newGameBoard;
-    //     } );
-    //     onClickSquare();
-    // }
+    function handleClickedSquare (rowIndex,columnIndex)  {
+        setGameBoard((prevGameBoard) => {
+            const newGameBoard = [...prevGameBoard.map((innerArray) => [...innerArray])];
+            newGameBoard[rowIndex][columnIndex] = activePlayerSymbol;
+            return newGameBoard;
+        } );
+        onClickSquare();
+    }
     return (
         <ol id="game-board">
         {gameBoard.map((row, rowIndex) => (<li key={rowIndex} >
