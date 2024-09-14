@@ -4,7 +4,6 @@ import GameBoard from './Components/GameBoard';
 import ActivityLog from './Components/ActivityLog';
 import {WINNING_COMBINATIONS} from './winning-combitination';
 import GameOver from './Components/GameOver';
-import bgMusic from '../public/audio/bg-music.mp3';
 import BackgroundMusic from './Components/BackgroundSong';
 const intialGameBoard = [
   [null, null, null],
