@@ -1,5 +1,5 @@
 import { useState } from "react";
-function PlayerInfo ({initialName, symbol, isActive}) {
+function PlayerInfo ({initialName, symbol, isActive, onChangeName}) {
    const [ playerName, setPlayerName] = useState(initialName);
    const [ isModification, setIsEditing ] = useState(false);
     //   const  handleModificationClick = () =>{
@@ -9,6 +9,10 @@ function PlayerInfo ({initialName, symbol, isActive}) {
     //   }
     const handleModificationClick = () => {
          setIsEditing((wasModification) => !wasModification);
+
+         if(isModification){
+          onChangeName(symbol, playerName);
+         }
       };
       function handleChangeName(event){
         setPlayerName(event.target.value);

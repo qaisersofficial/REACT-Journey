@@ -21,7 +21,10 @@ function derivedActivePlayer (gameTurns){
 
 
 function App() {
-
+  const [ players, setPlayers]=useState({
+        X: "Player 1",
+        O: "Player 2",
+  });
   const [gameTurns, setGameTurns] = useState([]);
   // const [activePlayer, setActivePlayer] = useState( "X" );
   // const [hasWinner, setHasWinner] = useState(false);
@@ -43,7 +46,7 @@ function App() {
           const thirdSquare = gameBoard[combination[2].row][combination[2].column];
             
           if ( firstSquare && firstSquare === secondSquare && firstSquare === thirdSquare){
-                  winner = firstSquare;
+                  winner = players[firstSquare];
                   break;
               }
           }
@@ -63,12 +66,23 @@ function App() {
   function handleRematch(){
     setGameTurns([]);
   }
+
+    function handlePlayerNameChange(symbol, newName){
+      setPlayers(prevPlayers => {
+        return {
+          ...prevPlayers,
+          [symbol]: newName,
+        };
+      });
+     
+    }
+
   return (<main>
      <BackgroundMusic src="/public/audio/bg-music.mp3" />
       <div id="game-container"> 
        <ol id="players" className='highlight-player'>
-        <PlayerInfo initialName="Player 1" symbol="X" isActive={activePlayer === 'X'}/>
-        <PlayerInfo initialName="Player 2" symbol="O" isActive={activePlayer === 'O'}/>
+        <PlayerInfo initialName="Player 1" symbol="X" isActive={activePlayer === 'X'} onChangeName = {handlePlayerNameChange}/>
+        <PlayerInfo initialName="Player 2" symbol="O" isActive={activePlayer === 'O'} onChangeName = {handlePlayerNameChange}/>
        </ol>
        {(winner || hasDraw )&& <GameOver winner={winner} onRestart={handleRematch}/>}
        <GameBoard onClickSquare={ switchPlayer } board={gameBoard}/>
