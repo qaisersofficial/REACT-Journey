@@ -3,6 +3,13 @@ import PlayerInfo from './Components/Playerinfo';
 import GameBoard from './Components/GameBoard';
 import ActivityLog from './Components/ActivityLog';
 import {WINNING_COMBINATIONS} from './winning-combitination';
+
+const intialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+];
+
 function derivedActivePlayer (gameTurns){
   let currentPlayer = 'X';
   if(gameTurns.length > 0 && gameTurns[0].player === 'X') {
@@ -10,14 +17,38 @@ function derivedActivePlayer (gameTurns){
   }
   return currentPlayer;
 }
+
+
 function App() {
 
-  // const [activePlayer, setActivePlayer] = useState( "X" );
   const [gameTurns, setGameTurns] = useState([]);
+  // const [activePlayer, setActivePlayer] = useState( "X" );
+  // const [hasWinner, setHasWinner] = useState(false);
       const activePlayer = derivedActivePlayer(gameTurns);
+//cutted from GameBoard component...
+      let gameBoard = intialGameBoard;
+      for(const turn of gameTurns){
+          const {square, player} = turn;
+          const {row, col} = square;
+          gameBoard[row][col] = player;
+  
+      }
+      let winner;
+
+      //lifting the computed value up
+          for(const combination of WINNING_COMBINATIONS){
+          const firstSquare = gameBoard[combination[0].row][combination[0].column];
+          const secondSquare = gameBoard[combination[1].row][combination[1].column];
+          const thirdSquare = gameBoard[combination[2].row][combination[2].column];
+            
+          if ( firstSquare && firstSquare === secondSquare && firstSquare === thirdSquare){
+                  winner = firstSquare;
+                  break;
+              }
+          }
+
   function switchPlayer(rowIndex, columnIndex) {
-    // setActivePlayer((prevActivePlayer) => prevActivePlayer === "X" ? "O" : "X");
- 
+
     setGameTurns(prevTurns => {
      const currentPlayer = derivedActivePlayer(prevTurns);
       const updatedTurns = [{ square: { row: rowIndex, col: columnIndex}, player: activePlayer },
@@ -33,7 +64,8 @@ function App() {
         <PlayerInfo initialName="Player 1" symbol="X" isActive={activePlayer === 'X'}/>
         <PlayerInfo initialName="Player 2" symbol="O" isActive={activePlayer === 'O'}/>
        </ol>
-       <GameBoard onClickSquare={ switchPlayer } turns={gameTurns}/>
+       {winner && <p>Player {winner} Won!</p>}
+       <GameBoard onClickSquare={ switchPlayer } board={gameBoard}/>
       </div>
       <ActivityLog turns={gameTurns}/>
     </main>
