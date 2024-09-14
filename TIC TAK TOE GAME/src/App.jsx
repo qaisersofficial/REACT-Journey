@@ -30,7 +30,7 @@ function App() {
        </ol>
        <GameBoard onClickSquare={ switchPlayer } turns={gameTurns}/>
       </div>
-      <ActivityLog/>
+      <ActivityLog turns={gameTurns}/>
     </main>
   );
 }
