@@ -15,6 +15,7 @@ function handleChange(inputIdentifier, newValue) {
       [inputIdentifier]: +newValue
     }));
   }
+  const durationisValid = userInput.duration > 0;
   return (
    <>
     <Header />
@@ -22,7 +23,8 @@ function handleChange(inputIdentifier, newValue) {
     userInput={userInput} 
     onChangeInput = {handleChange}
     />
-    <InvestmentResults input={userInput}/>
+    {durationisValid && <InvestmentResults input={userInput}/>}
+    {!durationisValid &&  <p className="center">Please enter duration greater than zero or a positive number</p> }
   </>)
 }
 
