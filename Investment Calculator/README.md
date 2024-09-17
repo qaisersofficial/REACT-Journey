@@ -39,7 +39,7 @@ Output
 
 2. Header.jsx
 
--Displays the application header with a logo and title.
+- Displays the application header with a logo and title.
 
 3. InputField.jsx
 
