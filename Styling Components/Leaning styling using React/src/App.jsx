@@ -1,4 +1,4 @@
-import AuthInputs from './components/AuthInputs.jsx';
+import AuthInputs from './components/AuthInputs/AuthInputs.jsx';
 import Header from './components/Header/Header.jsx';
 
 export default function App() {
