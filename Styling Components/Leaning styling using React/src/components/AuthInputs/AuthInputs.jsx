@@ -26,26 +26,26 @@ export default function AuthInputs() {
         <p>
           <label>Email</label>
           <input
-          style={{
-            backgroundColor: emailNotValid ? "#fed2d2" : "white",
-            color: emailNotValid ? "#ef4444" : "black",
-            borderColor: emailNotValid ? '#f73f3f': 'black'
-          }}            
+          // style={{
+          //   backgroundColor: emailNotValid ? "#fed2d2" : "white",
+          //   color: emailNotValid ? "#ef4444" : "black",
+          //   borderColor: emailNotValid ? '#f73f3f': 'black'
+          // }}            
           type="email"
-            // className={emailNotValid ? 'invalid' : undefined}
+            className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
         <p>
           <label>Password</label>
           <input
-           style={{
-            backgroundColor: passwordNotValid ? "#fed2d2" : "white",
-            color: passwordNotValid ? "#ef4444" : "black",
-            borderColor: passwordNotValid ? '#f73f3f': 'black'
-          }}    
+          //  style={{
+          //   backgroundColor: passwordNotValid ? "#fed2d2" : "white",
+          //   color: passwordNotValid ? "#ef4444" : "black",
+          //   borderColor: passwordNotValid ? '#f73f3f': 'black'
+          // }}    
             type="password"
-            // className={passwordNotValid ? 'invalid' : undefined}
+            className={passwordNotValid ? 'invalid' : undefined}
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }
