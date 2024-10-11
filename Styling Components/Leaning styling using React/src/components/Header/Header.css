@@ -25,11 +25,11 @@ header {
     margin: 0;
   }
   
-  header p {
+  /* header p {
     text-align: center;
     color: #a39191;
     margin: 0;
-  }
+  } */
   
   @media (min-width: 768px) {
     header {
