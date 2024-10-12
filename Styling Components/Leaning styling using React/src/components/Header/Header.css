@@ -31,7 +31,7 @@
     margin: 0;
   } */
   
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     header {
       margin-bottom: 4rem;
     }
@@ -39,4 +39,4 @@
     header h1 {
       font-size: 2.25rem;
     }
-  }
+  } */
