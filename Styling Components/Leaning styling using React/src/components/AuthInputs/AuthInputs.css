@@ -37,15 +37,15 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   } */
   
-  .label.invalid {
+  /* .label.invalid {
     color: #f87171;
-  }
+  } */
   
-  input.invalid {
+  /* input.invalid {
     color: #ef4444;
     border-color: #f73f3f;
     background-color: #fed2d2;
-  }
+  } */
   
   .actions {
     display: flex;
