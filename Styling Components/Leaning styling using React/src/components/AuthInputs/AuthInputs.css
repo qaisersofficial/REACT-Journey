@@ -64,27 +64,27 @@
     border: none;
   } */
   
-  .button:hover {
+  /* .button:hover {
     background-color: #f0920e;
     color: #ffd063;
     cursor: pointer;
-  }
+  } */
   
   /* .text-button {
     color: #f0b322;
     border: none;
   } */
   
-  .text-button:hover {
+  /* .text-button:hover {
     color: #f0920e;
-  }
+  } */
   /* button {
     cursor: pointer;
     background: none;
     line-height: inherit;
   } */
   
-  button:focus {
+  /* button:focus {
     outline: none;
   }
-  
+   */

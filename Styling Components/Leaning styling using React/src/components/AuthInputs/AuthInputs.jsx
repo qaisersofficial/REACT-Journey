@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./AuthInputs.css";
+// import "./AuthInputs.css";
 // import classes from '../Header/Header.module.css';
 import styled from 'styled-components';
 const StyledAuthInputs = styled.div `
@@ -52,13 +52,29 @@ color: #1f2937;
 background-color: #f0b322;
 border-radius: 6px;
 border: none;
-`
+// how to use hover in styled components
+&:hover {
+background-color: #f0920e;
+color: #ffd063;
+cursor: pointer;
+}
+// how to use focus in styled components
+&:focus {
+outline: none;
+}
+`;
 const StyledTextButton = styled.button `
   color: #f0b322;
   border: none;
   cursor: pointer;
   background: none;
   line-height: inherit;
+
+  // hover effect
+   &:hover {
+    color: #f0920e;
+  }
+
 `
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
